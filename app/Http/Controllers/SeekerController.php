@@ -7,19 +7,20 @@ use Illuminate\Http\Request;
 
 class SeekerController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth'); // Apply middleware to all methods in this controller
-    }
-
     public function index()
     {
+        // Check if the user is not logged in
+        if (!auth()->check()) {
+            return redirect()->route('auth.login'); // Redirect to the login page
+        }
+    
         // Retrieve all seekers from the database
         $seekers = Seeker::all();
-
+    
         // Return the pages/seekerList view and pass the seekers data
         return view('pages.seekersList', compact('seekers'));
     }
+    
 
     // Show the sign-up form for seekers
     public function showSignupForm()
@@ -51,7 +52,7 @@ class SeekerController extends Controller
         ]));
     
         // Redirect or return response
-        return redirect()->route('seekers.signup')->with('success', 'Seeker registration successful!');
+        return redirect()->route('seekers.signup')->with('success', 'Thank you for registering and decided to become part of our community.');
     }
     
     // Show the details of a specific seeker

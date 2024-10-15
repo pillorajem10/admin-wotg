@@ -13,6 +13,10 @@ class AuthController extends Controller
     // Show the signup form
     public function showSignupForm()
     {
+        if (Auth::check()) {
+            return redirect()->route('seekers.index'); // Redirect to seekers index if logged in
+        }
+        
         return view('pages.signup');
     }
 
@@ -50,8 +54,14 @@ class AuthController extends Controller
     // Show the login form
     public function showLoginForm()
     {
+        // Check if the user is authenticated
+        if (Auth::check()) {
+            return redirect()->route('seekers.index'); // Redirect to seekers index if logged in
+        }
+
         return view('pages.login'); // Ensure this view exists
     }
+
 
     // Handle login
     public function login(Request $request)
