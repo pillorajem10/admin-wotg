@@ -36,9 +36,26 @@
     background-color: #f2f2f2;
 }
 
+
+/*
 .seeker-table tr:hover {
     background-color: #e74c3c;
     color: white;
+}
+*/
+
+.view-button {
+    display: inline-block; /* Make it behave like a button */
+    padding: 10px 15px; /* Add some padding */
+    background-color: #c0392b; /* Button color */
+    color: white; /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.view-button:hover {
+    background-color: darkred; /* Darker shade on hover */
 }
 
 

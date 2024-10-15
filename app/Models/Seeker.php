@@ -11,6 +11,8 @@ class Seeker extends Model
 
     // Specify the table associated with the model
     protected $table = 'seekers';
+    protected $primaryKey = 'id';
+    public $timestamps = false; // Disable timestamps
 
     // Define the fillable attributes
     protected $fillable = [

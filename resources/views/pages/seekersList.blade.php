@@ -15,6 +15,7 @@
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Status</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,9 +24,13 @@
                         <td>{{ $seeker->seeker_fname }}</td>
                         <td>{{ $seeker->seeker_lname }}</td>
                         <td>{{ $seeker->seeker_status }}</td>
+                        <td>
+                            <a href="{{ route('seekers.view', $seeker->id) }}" class="view-button">View</a>
+                        </td>                        
                     </tr>
                     @endforeach
                 </tbody>
+                
             </table>
         </div>
     </div>

@@ -27,7 +27,18 @@ body {
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+.signup-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px; /* Space between columns */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
 }
 
 .form-input {

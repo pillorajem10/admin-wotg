@@ -19,6 +19,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // SEEKER CONTROLLER 
 Route::get('/seekers', [SeekerController::class, 'index'])->name('seekers.index');
+Route::get('/seekers/signup', [SeekerController::class, 'showSignupForm'])->name('seekers.signup');
+Route::post('/seekers/signup', [SeekerController::class, 'signup'])->name('seekers.signup.submit');
+Route::get('seekers/{id}', [SeekerController::class, 'show'])->name('seekers.view');
+
 
 // AUTH CONTOLLER 
 Route::get('/signup', [AuthController::class, 'showSignupForm'])->name('signup');

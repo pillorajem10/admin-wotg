@@ -120,11 +120,11 @@
         <nav class="navbar">
             <div class="navbar-brand">
                 <img src="{{ asset('images/wotg-logo.png') }}" alt="WOTG Logo" style="width: 4rem;"> <!-- Adjust height as needed -->
-                <div class="hamburger" onclick="toggleDrawer()">
-                    <i class="fas fa-bars"></i>
-                </div>
             </div>
-        </nav>        
+            <div class="hamburger" onclick="toggleDrawer()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>               
 
         <aside class="sidebar" id="sidebar">
             <ul>
