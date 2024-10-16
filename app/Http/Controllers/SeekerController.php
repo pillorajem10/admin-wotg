@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Seeker;
+use App\Mail\SeekerEmail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class SeekerController extends Controller
 {
@@ -20,7 +22,6 @@ class SeekerController extends Controller
         // Return the pages/seekerList view and pass the seekers data
         return view('pages.seekersList', compact('seekers'));
     }
-    
 
     // Show the sign-up form for seekers
     public function showSignupForm()
@@ -64,4 +65,28 @@ class SeekerController extends Controller
         // Return the seeker detail view and pass the seeker data
         return view('pages.seekerDetail', compact('seeker'));
     }
+
+    // Send email to selected seekers
+    public function sendSeekerEmail(Request $request)
+    {
+        \Log::info('Request data:', $request->all()); // Log all incoming request data
+        $request->validate([
+            'subject' => 'required|string|max:255',
+            'body' => 'required|string',
+            'emails' => 'required|string', // Validate the emails field
+        ]);
+    
+        // Split the emails into an array
+        $emails = explode(',', $request->emails);
+    
+        // Log the email addresses
+        \Log::info('Sending emails to the following addresses:', $emails);
+    
+        // Send an email to each address
+        foreach ($emails as $email) {
+            Mail::to(trim($email))->send(new SeekerEmail($email, $request->subject, $request->body));
+        }
+    
+        return redirect()->back()->with('success', 'Emails sent successfully!');
+    }    
 }

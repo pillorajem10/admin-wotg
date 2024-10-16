@@ -22,6 +22,7 @@ Route::get('/seekers', [SeekerController::class, 'index'])->name('seekers.index'
 Route::get('/seekers/signup', [SeekerController::class, 'showSignupForm'])->name('seekers.signup');
 Route::post('/seekers/signup', [SeekerController::class, 'signup'])->name('seekers.signup.submit');
 Route::get('seekers/{id}', [SeekerController::class, 'show'])->name('seekers.view');
+Route::post('/seekers/send-email', [SeekerController::class, 'sendSeekerEmail'])->name('seekers.sendEmail');
 
 
 // AUTH CONTOLLER 

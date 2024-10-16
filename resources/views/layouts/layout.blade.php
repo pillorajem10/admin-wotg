@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script>
+        window.Laravel = {
+            csrfToken: '{{ csrf_token() }}'
+        };
+    </script>
     <style>
         * {
             box-sizing: border-box;
@@ -116,11 +122,13 @@
     @yield('styles')
 </head>
 <body>
-    <div class="container">
+    <div>
         <nav class="navbar">
             <div class="navbar-brand">
-                <img src="{{ asset('images/wotg-logo.png') }}" alt="WOTG Logo" style="width: 4rem;"> <!-- Adjust height as needed -->
-            </div>
+                <a href="/">
+                    <img src="{{ asset('images/wotg-logo.png') }}" alt="WOTG Logo" style="width: 3.8rem;">
+                </a>
+            </div>            
             <div class="hamburger" onclick="toggleDrawer()">
                 <i class="fas fa-bars"></i>
             </div>
@@ -156,5 +164,6 @@
             sidebar.classList.toggle('active');
         }
     </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
