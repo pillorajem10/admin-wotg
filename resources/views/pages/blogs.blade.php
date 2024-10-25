@@ -29,11 +29,8 @@
                 <thead>
                     <tr class="blog-table-header">
                         <th class="blog-table-header-cell">Blog Title</th>
-                        <th class="blog-table-header-cell">Creator</th>
-                        <th class="blog-table-header-cell">Date Added</th>
                         <th class="blog-table-header-cell">Release Date</th>
                         <th class="blog-table-header-cell">Thumbnail</th>
-                        <th class="blog-table-header-cell">Approved</th> 
                         <th class="blog-table-header-cell">Actions</th> 
                     </tr>
                 </thead>
@@ -41,8 +38,6 @@
                     @forelse ($blogs as $blog)
                         <tr class="blog-table-row">
                             <td class="blog-table-cell">{{ $blog->blog_title }}</td>
-                            <td class="blog-table-cell">{{ $blog->creator ? $blog->creator->user_fname . ' ' . $blog->creator->user_lname : 'Unknown' }}</td>
-                            <td class="blog-table-cell">{{ \Carbon\Carbon::parse($blog->created_at)->format('F j, Y') }}</td>
                             <td class="blog-table-cell">
                                 {{ $blog->blog_release_date_and_time ? \Carbon\Carbon::parse($blog->blog_release_date_and_time)->format('F j, Y') : 'Not Set' }}
                             </td>
@@ -51,13 +46,6 @@
                                     <img src="data:image/jpeg;base64,{{ base64_encode($blog->blog_thumbnail) }}" alt="{{ $blog->blog_title }}" style="max-width: 100px; height: auto;">
                                 @else
                                     No Thumbnail
-                                @endif
-                            </td>
-                            <td class="blog-table-cell">
-                                @if($blog->blog_approved)
-                                    <span class="text-success">&#10004;</span>
-                                @else
-                                    <span class="text-danger">&#10008;</span>
                                 @endif
                             </td>
                             <td class="blog-table-cell">

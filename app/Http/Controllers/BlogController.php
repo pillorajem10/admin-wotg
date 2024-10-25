@@ -20,16 +20,25 @@ class BlogController extends Controller
 
     public function index(Request $request)
     {
-        // Get the search term from the request
-        $search = $request->input('search');
+        // Set the timezone to Manila
+        $today = Carbon::now('Asia/Manila');
     
-        // Fetch blogs with pagination, applying the search filter if provided
-        $blogs = Blog::when($search, function ($query, $search) {
-            return $query->where('blog_title', 'like', '%' . $search . '%');
-        })->paginate(5);
+        // Initialize the query to fetch approved blogs with a release date less than or equal to today
+        $query = Blog::where('blog_release_date_and_time', '<=', $today)
+                      ->where('blog_approved', true);
     
-        return view('pages.blogs', compact('blogs', 'search'));
-    }       
+        // Check if there's a search query in the request
+        if ($request->has('search') && $request->search != '') {
+            $searchTerm = $request->search;
+            // Filter blogs based on the search term for blog_title
+            $query->where('blog_title', 'like', '%' . $searchTerm . '%');
+        }
+    
+        // Paginate the results (10 per page)
+        $blogs = $query->paginate(10);
+    
+        return view('pages.blogs', compact('blogs'));
+    }          
 
     // Show the details of a specific blog
     public function show($id)
