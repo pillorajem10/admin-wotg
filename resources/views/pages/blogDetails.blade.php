@@ -8,17 +8,6 @@
 
 @section('content')
     <div class="blog-details-container">
-        <div class="blog-meta d-flex justify-content-between align-items-center flex-wrap">
-            <div>
-                <span class="blog-creator">
-                    Created by: {{ $blog->creator ? $blog->creator->user_fname . ' ' . $blog->creator->user_lname : 'Unknown' }}
-                </span>,
-                <span class="blog-date">
-                    Date Added: {{ \Carbon\Carbon::parse($blog->created_at)->format('F j, Y') }}
-                </span>
-            </div>
-        </div>     
-
         <div class="blog-content">
             <div class="blog-thumbnail">
                 @if($blog->blog_thumbnail)
