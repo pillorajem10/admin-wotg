@@ -43,7 +43,16 @@ class BlogController extends Controller
     // Show the details of a specific blog
     public function show($id)
     {
-        $blog = Blog::findOrFail($id); // Fetch the specific blog or fail if not found
+        $blog = Blog::find($id); // Use find instead of findOrFail to allow custom handling
+    
+        // Get the current date and time in Manila timezone
+        $today = Carbon::now('Asia/Manila');
+    
+        // Check if the blog exists, is approved, and has a valid release date
+        if (!$blog || !$blog->blog_approved || $blog->blog_release_date_and_time > $today) {
+            return redirect()->route('blogs.index')->with('error', 'No blog found');
+        }
+    
         return view('pages.blogDetails', compact('blog'));
-    }
+    }    
 }
