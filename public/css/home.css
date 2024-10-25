@@ -1,0 +1,67 @@
+.custom-card {
+    border: 1px solid #e0e0e0; /* Light grey border */
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px 0; /* Space above and below the card */
+    padding: 20px; /* Inner padding */
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.custom-card:hover {
+    transform: translateY(-5px); /* Lift the card on hover */
+}
+
+.card-header {
+    font-size: 1.5em; /* Larger font for the header */
+    font-weight: bold; /* Bold text */
+    color: #333; /* Dark grey color */
+    border-bottom: 2px solid #c0392b; /* Blue bottom border */
+    padding-bottom: 10px; /* Space below header */
+}
+
+.card-body {
+    padding: 15px 0; /* Vertical padding for body */
+}
+
+.card-title {
+    font-size: 2em; /* Large font for the title */
+    color: #c0392b; /* Blue color for emphasis */
+    margin: 0; /* Remove default margin */
+}
+
+.card-text {
+    font-size: 1.2em; /* Slightly larger text */
+    color: #555; /* Medium grey color */
+}
+
+.btn-view {
+    display: inline-block; /* Align as a block for spacing */
+    padding: 10px 15px; /* Padding around the text */
+    margin-top: 15px; /* Space above the button */
+    background-color: #c0392b; /* Bootstrap primary color */
+    color: #ffffff; /* White text */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.btn-view:hover {
+    background-color: darkred; /* Darker blue on hover */
+    color: #ffffff; /* White text */
+    text-decoration: none; /* Remove underline */
+}
+
+.form-control {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 10px; /* Space above */
+}
+
+.form-control:focus {
+    border-color: #c0392b; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(192, 57, 43, 0.5); /* Add shadow on focus */
+}
+

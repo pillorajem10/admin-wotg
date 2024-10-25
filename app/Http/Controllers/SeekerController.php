@@ -9,19 +9,33 @@ use Illuminate\Support\Facades\Mail;
 
 class SeekerController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         // Check if the user is not logged in
         if (!auth()->check()) {
             return redirect()->route('auth.login'); // Redirect to the login page
         }
     
-        // Retrieve all seekers from the database
-        $seekers = Seeker::all();
+        // Initialize the query to retrieve seekers
+        $query = Seeker::where('seeker_missionary', auth()->id());
+    
+        // Check if there's a search query in the request
+        if ($request->has('search') && $request->search != '') {
+            $searchTerm = $request->search;
+            // Filter seekers based on the search term for first name, last name, or email
+            $query->where(function($q) use ($searchTerm) {
+                $q->where('seeker_fname', 'like', '%' . $searchTerm . '%') // Search by first name
+                  ->orWhere('seeker_lname', 'like', '%' . $searchTerm . '%') // Search by last name
+                  ->orWhere('seeker_email', 'like', '%' . $searchTerm . '%'); // Search by email
+            });
+        }
+    
+        // Retrieve the filtered seekers
+        $seekers = $query->get();
     
         // Return the pages/seekerList view and pass the seekers data
         return view('pages.seekersList', compact('seekers'));
-    }
+    }      
 
     // Show the sign-up form for seekers
     public function showSignupForm()

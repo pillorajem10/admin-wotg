@@ -3,7 +3,7 @@
 @section('title', 'Seekers List')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/seekersList.css?v=1.2') }}">
+    <link rel="stylesheet" href="{{ asset('css/seekersList.css?v=1.3') }}">
 @endsection
 
 @section('content')
@@ -19,6 +19,15 @@
                 {{ session('error') }}
             </div>
         @endif
+
+        <!-- Search Form -->
+        <div class="search-container">
+            <form method="GET" action="{{ route('seekers.index') }}">
+                <input type="text" name="search" placeholder="Search seekers..." value="{{ request('search') }}" class="search-input">
+                <button type="submit" class="custom-search">Search</button>
+            </form>
+            <a href="{{ route('seekers.index') }}" class="clear-button">Clear</a> <!-- Clear button -->
+        </div>        
 
         <div class="table-responsive">
             <table class="seeker-table">
@@ -51,7 +60,7 @@
             </table>            
         </div>
 
-        <button id="openModal" class="btn btn-custom">Open Modal</button>
+        <button id="openModal" class="btn view-button">Write Email</button>
 
         <!-- Modal Structure -->
         <div id="nameModal" class="modal" style="display:none;">
@@ -63,11 +72,11 @@
                     @csrf
                     <input type="text" id="subject" name="subject" placeholder="Subject" required>
                     <textarea id="body" name="body" placeholder="Body" required></textarea>
-                    <button type="submit" class="btn btn-custom">Submit</button>
+                    <button type="submit" class="btn view-button">Submit</button>
                 </form>                             
             </div>
         </div>
 
-        <script src="{{ asset('js/seekers.js?v=1.2') }}"></script>
+        <script src="{{ asset('js/seekers.js?v=1.3') }}"></script>
     </div>
 @endsection

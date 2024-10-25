@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
+    <title>@yield('title') | WOTG Mission</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script>
@@ -29,8 +29,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
-            width: 100%;
+            position: fixed; /* Change to fixed */
+            top: 0; /* Stick to the top */
+            left: 0; /* Align to the left */
+            width: 100%; /* Full width */
+            z-index: 1000; /* Ensure it stays above other content */
         }
 
         .navbar-brand {
@@ -74,7 +77,12 @@
         .main-content {
             padding: 20px;
             margin-left: 0; /* Adjust for sidebar */
+            margin-top: 6.3rem;
             transition: margin-left 0.3s ease;
+        }
+
+        .sidebar.active + .main-content {
+            margin-left: 250px; /* Shift right when sidebar is active */
         }
 
         header {
@@ -82,6 +90,7 @@
             color: white;
             padding: 10px;
             border-radius: 5px;
+            font-size: 1rem;
         }
 
         .cards {
@@ -118,6 +127,30 @@
         .logout-button:hover {
             text-decoration: none; /* Optional hover effect */
         }
+
+        .header-title {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .sidebar {
+                width: 200px; /* Adjust width for smaller screens */
+            }
+
+            .sidebar.active {
+                left: 0; /* Keep it at 0 when active */
+                width: 100%; /* Full width on mobile */
+            }
+
+            .main-content {
+                margin-left: 0; /* Reset margin for mobile */
+            }
+
+            .sidebar.active + .main-content {
+                margin-left: 0; /* No shift when sidebar is active on mobile */
+            }
+        }
+
     </style>
     @yield('styles')
 </head>
@@ -137,6 +170,7 @@
         <aside class="sidebar" id="sidebar">
             <ul>
                 <li><a href="/seekers">Seekers</a></li>
+                <li><a href="/blogs">Blogs</a></li>
                 <li>
                     <form action="{{ route('auth.logout') }}" method="POST" style="display: inline;">
                         @csrf
@@ -150,7 +184,7 @@
 
         <div class="main-content">
             <header>
-                <h1>@yield('title', 'Dashboard')</h1>
+                <h1 class="header-title">@yield('title', 'Dashboard')</h1>
             </header>
             <div class="cards">
                 @yield('content')

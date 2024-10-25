@@ -11,6 +11,26 @@
     text-align: center;
 }
 
+.search-container {
+    display: flex; /* Flex container for input and button */
+    justify-content: flex-start; /* Center align items */
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.search-input {
+    padding: 10px; /* Padding for input */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    margin-right: 10px; /* Space between input and button */
+    flex: 1; /* Allow input to grow */
+}
+
+.search-input:focus {
+    border-color: #c0392b; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(192, 57, 43, 0.5); /* Shadow on focus */
+}
+
 .table-responsive {
     overflow-x: auto; /* Allows horizontal scrolling */
     margin-top: 20px;
@@ -19,6 +39,7 @@
 .seeker-table {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 1rem;
 }
 
 .seeker-table th, .seeker-table td {
@@ -56,6 +77,8 @@
 
 .view-button:hover {
     background-color: darkred; /* Darker shade on hover */
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
 }
 
 
@@ -93,7 +116,7 @@
     cursor: pointer;
 }
 
-.btn-custom {
+.custom-search {
     border: 2px solid #c0392b;      /* Red border */
     color: #c0392b;                 /* Red text color */
     background-color: white;    /* White background */
@@ -102,9 +125,29 @@
     text-decoration: none;       /* Remove underline */
     display: inline-block;      /* Allow margin/padding */
     cursor: pointer;            /* Pointer cursor on hover */
-    margin-top: 1rem;
+    margin-top: .5rem;
     border-radius: 1rem;
     transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+}
+
+.clear-button {
+    border: 2px solid #c0392b;      /* Red border */
+    color: white;                 /* Red text color */
+    background-color: #c0392b;    /* White background */
+    padding: 10px 15px;         /* Padding for the button */
+    text-align: center;         /* Center text */
+    text-decoration: none;       /* Remove underline */
+    display: inline-block;      /* Allow margin/padding */
+    cursor: pointer;            /* Pointer cursor on hover */
+    margin-top: .5rem;
+    border-radius: 1rem;
+    transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+}
+
+.clear-button:hover {
+    color: #c0392b;                 /* Red text color */
+    background-color: white;    /* White background */       /* Center text */
+    text-decoration: none;       /* Remove underline */
 }
 
 .modal-content form {
@@ -124,7 +167,7 @@
     height: 100px; /* Default height */
 }
 
-.btn-custom:hover {
+.custom-search:hover {
     background-color: darkred;  /* Dark red background on hover */
     color: white;               /* White text color on hover */
 }
@@ -147,5 +190,14 @@
 
     .seeker-table {
         margin-top: 10px;
+    }
+
+    .clear-button, .custom-search {
+        font-size: .8rem;
+        width: 100%;
+    }
+
+    .search-input {
+        width: 100%;
     }
 }
