@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="back-link">
-        <a href="{{ url()->previous() }}" class="back-button">
+        <a href="/seekers" class="back-button">
             <span class="arrow">&larr;</span> Go Back
         </a>
     </div>
