@@ -78,7 +78,25 @@ class SeekerController extends Controller
         $seeker = Seeker::findOrFail($id);
 
         // Return the seeker detail view and pass the seeker data
-        return view('pages.seekerDetail', compact('default'));
+        return view('pages.seekerDetail', compact('seeker'));
+    }
+
+    public function changeStatus(Request $request, $id)
+    {
+        // Validate the incoming request
+        $request->validate([
+            'seeker_status' => 'required|string|in:Infant,Child,Adult,Parent',
+        ]);
+
+        // Find the seeker by ID
+        $seeker = Seeker::findOrFail($id);
+        
+        // Update the status
+        $seeker->seeker_status = $request->seeker_status;
+        $seeker->save();
+
+        // Redirect back with a success message
+        return redirect()->back()->with('success', 'Status updated successfully.');
     }
 
     // Send email to selected seekers

@@ -21,6 +21,19 @@
         <p><strong>Country:</strong> {{ $seeker->seeker_country }}</p>
         <p><strong>City:</strong> {{ $seeker->seeker_city }}</p>
         <p><strong>Catch From:</strong> {{ $seeker->seeker_catch_from }}</p>
-        <p><strong>Status:</strong> {{ $seeker->seeker_status }}</p>
+        
+        <form action="{{ route('seeker.updateStatus', $seeker->id) }}" method="POST">
+            @csrf
+            @method('PUT')
+            <div>
+                <strong>Status:</strong>
+                <select name="seeker_status" id="seeker_status" onchange="this.form.submit()">
+                    <option value="Infant" {{ $seeker->seeker_status == 'Infant' ? 'selected' : '' }}>Infant</option>
+                    <option value="Child" {{ $seeker->seeker_status == 'Child' ? 'selected' : '' }}>Child</option>
+                    <option value="Adult" {{ $seeker->seeker_status == 'Adult' ? 'selected' : '' }}>Adult</option>
+                    <option value="Parent" {{ $seeker->seeker_status == 'Parent' ? 'selected' : '' }}>Parent</option>
+                </select>
+            </div>
+        </form>
     </div>
 @endsection
