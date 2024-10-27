@@ -10,20 +10,20 @@ class SeekerEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $seeker;
+    public $fname; // Renamed to fname
     public $subject;
     public $body;
 
     /**
      * Create a new message instance.
      *
-     * @param $seeker
+     * @param $fname
      * @param $subject
      * @param $body
      */
-    public function __construct($seeker, $subject, $body)
+    public function __construct($fname, $subject, $body)
     {
-        $this->seeker = $seeker;
+        $this->fname = $fname; // Use fname from the authenticated user
         $this->subject = $subject;
         $this->body = $body;
     }
@@ -35,9 +35,11 @@ class SeekerEmail extends Mailable
      */
     public function build()
     {
-        return $this->from('support@wotgonline.com', 'WOTG')
+        return $this->from('support@wotgonline.com', 'WOTG Mission ' . $this->fname) // Include the authenticated user's fname here
                     ->subject($this->subject) // Use the custom subject
                     ->view('emails.seekerEmail') // Ensure the view is correct
                     ->with(['body' => $this->body]); // Pass the body to the view
     }
 }
+
+

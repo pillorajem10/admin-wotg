@@ -24,8 +24,11 @@ Route::get('/seekers/signup', [SeekerController::class, 'showSignupForm'])->name
 Route::post('/seekers/signup', [SeekerController::class, 'signup'])->name('seekers.signup.submit');
 Route::get('seekers/{id}', [SeekerController::class, 'show'])->name('seekers.view');
 Route::post('/seekers/send-email', [SeekerController::class, 'sendSeekerEmail'])->name('seekers.sendEmail');
-Route::get('/fetch-emails', [SeekerController::class, 'fetchEmails'])->name('seekers.fetchEmails');
+// Route::get('/fetch-emails', [SeekerController::class, 'fetchEmails'])->name('seekers.fetchEmails');
 Route::put('/seeker/{id}/update-status', [SeekerController::class, 'changeStatus'])->name('seeker.updateStatus');
+// Route::get('/email/thread/{id}', [SeekerController::class, 'showEmailThread'])->name('email.thread');
+Route::get('/fetch-email-ids', [SeekerController::class, 'fetchMessageIds'])->name('emails.fetch');
+
 
 
 // AUTH CONTOLLER 

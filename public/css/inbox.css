@@ -1,0 +1,30 @@
+.no-emails {
+    color: red; /* Example style */
+}
+
+.email-subject {
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+.email-recipient {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.email-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.divider {
+    margin: 10px 0;
+}
+
+.from-left {
+    justify-content: flex-start; /* Align to the left */
+}
+
+.from-right {
+    justify-content: flex-end; /* Align to the right */
+}
