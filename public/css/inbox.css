@@ -1,34 +1,69 @@
-.no-emails {
-    color: red; /* Example style */
+/* Inbox Container */
+.inbox-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Title */
+.inbox-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Email Subject */
 .email-subject {
     font-size: 1.5em;
     margin-top: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
 }
 
-.email-recipient {
-    font-size: 1.2em;
-    margin: 10px 0;
-}
-
+/* Email List */
 .email-list {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
 }
 
-.divider {
-    margin: 10px 0;
+/* Email Item */
+.email-item {
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
 }
 
+.email-item:hover {
+    background-color: #eaeaea;
+}
+
+/* Alignment Classes */
 .from-left {
-    justify-content: flex-start; /* Align to the left */
+    text-align: left;
 }
 
 .from-right {
-    justify-content: flex-end; /* Align to the right */
+    text-align: right;
 }
 
+/* Message Body */
+.message-body {
+    margin-bottom: 10px;
+}
+
+/* No Emails Message */
+.no-emails {
+    text-align: center;
+    font-size: 1.2em;
+    color: #777;
+}
+
+/* Modal Styles */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -48,6 +83,26 @@
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#replyBody {
+    width: 100%; /* Full width of the modal */
+    height: 150px; /* Set a height to make it visually appealing */
+    padding: 10px; /* Add some padding for comfort */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    resize: none; /* Prevent resizing */
+    font-family: 'Arial', sans-serif; /* Consistent font */
+    font-size: 16px; /* Adjust font size */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+}
+
+/* Placeholder Styles */
+#replyBody::placeholder {
+    color: #aaa; /* Placeholder color */
+    opacity: 1; /* Ensure placeholder is fully opaque */
 }
 
 .close {
@@ -62,4 +117,40 @@
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Send Reply Button */
+.send-reply-btn {
+    background-color: #c0392b;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.send-reply-btn:hover {
+    background-color: #218838;
+}
+
+/* Email From Label */
+.from-label {
+    color: #c0392b; /* Color for the From label */
+}
+
+/* Reply Button */
+.reply-btn {
+    background-color: #c0392b; /* Background color for the reply button */
+    color: #fff; /* Text color for the button */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.reply-btn:hover {
+    background-color: #a83228; /* Darker shade for hover effect */
 }

@@ -8,13 +8,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // When the user clicks a reply button, open the modal
     replyButtons.forEach(function(button) {
         button.onclick = function() {
-            // Get subject and recipient email
+            // Get subject, recipient email, and original message ID
             var subject = this.getAttribute('data-subject');
             var to = this.getAttribute('data-to');
+            var originalMessageId = this.getAttribute('data-original-message-id'); // Get original message ID
+
+            // Log the original message ID
+            console.log('Original Message ID:', originalMessageId);
 
             // Set the values in the modal form
             document.getElementById('replySubject').value = subject;
             document.getElementById('replyTo').value = to;
+            document.getElementById('replyOriginalMessageId').value = originalMessageId; // Set original message ID in hidden input
 
             // Open the modal
             modal.style.display = 'block';

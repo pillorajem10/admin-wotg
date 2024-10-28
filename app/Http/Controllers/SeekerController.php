@@ -211,8 +211,12 @@ class SeekerController extends Controller
     
         // Sort messages by date (oldest first)
         usort($allMessages, function($a, $b) {
-            return strtotime($a->getDate()) - strtotime($b->getDate());
+            $dateA = strtotime($a->getDate());
+            $dateB = strtotime($b->getDate());
+    
+            return $dateA - $dateB;
         });
+        
     
         // Group messages by normalized subject
         $groupedMessages = [];
@@ -235,7 +239,7 @@ class SeekerController extends Controller
     
             // Group by normalized subject
             $groupedMessages[$normalizedSubject][] = [
-                'id' => $message->getMessageId(),
+                'message_id' => $message->getMessageId(),
                 'subject' => $normalizedSubject,
                 'from' => $senderName . ' <' . $senderEmail . '>', // Combine name and email
                 'to' => $reciepientName . ' <' . $reciepientEmail . '>', 
@@ -268,9 +272,15 @@ class SeekerController extends Controller
         // Get the current time in Asia/Manila timezone
         $dateTime = Carbon::now('Asia/Manila')->format('F j, Y, g:i a');
     
-        // Send the reply email
-        Mail::to($request->to)->send(new ReplyEmail($fname, $lname, $request->subject, $request->body, $dateTime));
+        // Get the original Message-ID from the thread
+        $originalMessageId = $request->input('original_message_id'); // Ensure you pass this from your frontend
+    
+        // Log the original Message-ID
+        \Log::info('Original Message ID: ' . $originalMessageId);
+    
+        // Send the reply email with threading headers
+        Mail::to($request->to)->send(new ReplyEmail($fname, $lname, $request->subject, $request->body, $dateTime, $originalMessageId));
     
         return redirect()->back()->with('success', 'Reply sent successfully!');
-    }
+    } 
 }
