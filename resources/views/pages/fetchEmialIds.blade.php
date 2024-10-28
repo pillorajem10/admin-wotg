@@ -38,7 +38,6 @@
                             @endphp
                             <li class="email-item {{ $alignmentClass }}">
                                 <div class="message-body">
-                                    <strong class="email-date">Message ID:</strong> {{ $message['message_id'] }}<br>
                                     <strong class="email-from from-label">From:</strong> {{ $sender }}<br>
                                     <strong class="email-date">Date:</strong> {{ $formattedDate }}<br>
                                     <strong class="email-message">Message:</strong> {!! $message['body'] !!}
