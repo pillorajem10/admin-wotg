@@ -34,15 +34,15 @@ class ReplyEmail extends Mailable
     {
         return $this
             ->from('hoperefresh@wotgonline.com', 'WOTG Mission ' . $this->fname . ' ' . $this->lname)
+            ->subject('Re: ' . $this->subject) // Keep the subject to match the original thread
             ->view('emails.reply')
             ->with([
                 'body' => $this->body,
                 'dateTime' => $this->dateTime,
             ])
-            ->withSwiftMessage(function ($message) {
-                // Ensure the headers are correctly set
-                $message->getHeaders()->addTextHeader('In-Reply-To', $this->originalMessageId);
-                $message->getHeaders()->addTextHeader('References', $this->originalMessageId);
-            });
+            ->withHeaders([
+                'In-Reply-To' => $this->originalMessageId,
+                'References' => $this->originalMessageId,
+            ]);
     }
 }
