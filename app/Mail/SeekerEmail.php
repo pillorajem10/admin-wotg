@@ -10,22 +10,28 @@ class SeekerEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $fname; // Renamed to fname
+    public $fname; // First name
+    public $lname; // Last name
     public $subject;
     public $body;
+    public $dateTime; // Add the dateTime property
 
     /**
      * Create a new message instance.
      *
      * @param $fname
+     * @param $lname
      * @param $subject
      * @param $body
+     * @param $dateTime
      */
-    public function __construct($fname, $subject, $body)
+    public function __construct($fname, $lname, $subject, $body, $dateTime)
     {
-        $this->fname = $fname; // Use fname from the authenticated user
+        $this->fname = $fname;
+        $this->lname = $lname;
         $this->subject = $subject;
         $this->body = $body;
+        $this->dateTime = $dateTime; // Set the dateTime
     }
 
     /**
@@ -35,11 +41,12 @@ class SeekerEmail extends Mailable
      */
     public function build()
     {
-        return $this->from('support@wotgonline.com', 'WOTG Mission ' . $this->fname) // Include the authenticated user's fname here
-                    ->subject($this->subject) // Use the custom subject
-                    ->view('emails.seekerEmail') // Ensure the view is correct
-                    ->with(['body' => $this->body]); // Pass the body to the view
+        return $this->from('hoperefresh@wotgonline.com', 'WOTG Mission ' . $this->fname . ' ' . $this->lname)
+                    ->subject($this->subject)
+                    ->view('emails.seekerEmail')
+                    ->with([
+                        'body' => $this->body,
+                        'dateTime' => $this->dateTime, // Pass the dateTime to the view
+                    ]);
     }
 }
-
-
