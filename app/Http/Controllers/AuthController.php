@@ -29,6 +29,7 @@ class AuthController extends Controller
             'user_lname' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8',
+            'user_gender' => 'required|string|in:male,female', // Updated validation for user_gender
         ]);
 
         // Check validation
@@ -45,6 +46,7 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'user_role' => 'missionary', // Set default role
+            'user_gender' => $request->user_gender, // Include user_gender in user creation
         ]);
 
         // Redirect or return response

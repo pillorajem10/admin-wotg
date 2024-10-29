@@ -17,6 +17,7 @@ class User extends Authenticatable
         'user_fname',
         'user_lname',
         'user_role',
+        'user_gender',
         'email',
         'password',
     ];
@@ -25,5 +26,10 @@ class User extends Authenticatable
         'password',
     ];
 
-    // You can define other methods or relationships here
+    // Define the relationship to Seekers
+    public function seekers()
+    {
+        return $this->hasMany(Seeker::class, 'seeker_missionary', 'id'); // Adjust the foreign key if necessary
+    }
 }
+

@@ -6,13 +6,6 @@
     <div>
         <h2 class="auth-title">Sign Up</h2>
 
-        {{-- 
-            @if (session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
-        --}}
         @if (session('error'))
             <div class="alert alert-danger">
                 {{ session('error') }}
@@ -34,6 +27,15 @@
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label for="user_gender">Gender</label>
+                <select name="user_gender" id="user_gender" class="form-input" required>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
             </div>
 
             <div class="form-group">
