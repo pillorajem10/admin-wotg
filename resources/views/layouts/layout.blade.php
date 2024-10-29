@@ -172,6 +172,7 @@
                 <li><a href="/seekers">Seekers</a></li>
                 <li><a href="/blogs">Blogs</a></li>
                 <li><a href="/fetch-email-ids">Inbox</a></li>
+                <li><a href="/prayer-requests">Prayer Requests</a></li>
                 <li>
                     <form action="{{ route('auth.logout') }}" method="POST" style="display: inline;">
                         @csrf

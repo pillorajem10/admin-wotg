@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SeekerController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PrayerRequestController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,3 +42,6 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 // BLOGS
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
 Route::get('/blogs/{id}', [BlogController::class, 'show'])->name('blogs.show');
+
+// PRAYER REQUEST
+Route::get('/prayer-requests', [PrayerRequestController::class, 'index'])->name('prayerRequest.index');
