@@ -43,3 +43,17 @@
 .alert {
     margin-top: 20px;
 }
+
+.btn-custom {
+    background-color: #c0392b;
+    color: white;
+    padding: 10px 20px; /* Optional padding */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Optional rounded corners */
+}
+
+.btn-custom:hover {
+    background-color: #a93226; /* Optional hover effect */
+    text-decoration: none; /* Remove underline */
+    color: white;
+}

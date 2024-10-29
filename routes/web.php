@@ -45,3 +45,5 @@ Route::get('/blogs/{id}', [BlogController::class, 'show'])->name('blogs.show');
 
 // PRAYER REQUEST
 Route::get('/prayer-requests', [PrayerRequestController::class, 'index'])->name('prayerRequest.index');
+Route::get('/prayer-requests/create', [PrayerRequestController::class, 'create'])->name('prayerRequest.create');
+Route::post('/prayer-requests', [PrayerRequestController::class, 'store'])->name('prayerRequest.store');

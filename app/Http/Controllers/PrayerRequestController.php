@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\PrayerRequest;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Seeker;
 
 class PrayerRequestController extends Controller
 {
@@ -26,7 +29,14 @@ class PrayerRequestController extends Controller
      */
     public function create()
     {
-        //
+        // Get the authenticated user's ID
+        $userId = Auth::id();
+
+        // Retrieve seekers where seeker_missionary is the authenticated user's ID
+        $seekers = Seeker::where('seeker_missionary', $userId)->get();
+
+        // Pass the seekers to the view
+        return view('pages.addPrayerRequest', compact('seekers'));
     }
 
     /**
@@ -34,8 +44,25 @@ class PrayerRequestController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        // Validate the incoming request
+        $request->validate([
+            'pr_seeker' => 'required|exists:seekers,id', // Ensure seeker exists
+            'pr_prayer' => 'required|string', // Validate prayer request content
+        ]);
+    
+        // Create the prayer request entry using the authenticated user's ID for missionary
+        PrayerRequest::create([
+            'pr_missionary' => auth()->id(), // Get the authenticated user's ID
+            'pr_seeker' => $request->pr_seeker, // Get seeker ID
+            'pr_prayer' => $request->pr_prayer, // Get prayer request
+            'pr_progress' => 'requested', // Default value for progress
+        ]);
+    
+        // Redirect or return response
+        return redirect()->route('prayerRequest.index')->with('success', 'Prayer request created successfully.');
+    }    
+    
+    
 
     /**
      * Display the specified resource.
