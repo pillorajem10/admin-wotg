@@ -1,0 +1,45 @@
+.container {
+    margin-top: 20px;
+}
+
+.prayer-requests-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table-header {
+    background-color: #c0392b;
+    color: #fff;
+}
+
+.table-header-cell {
+    padding: 12px;
+    text-align: left;
+}
+
+.table-row {
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.table-cell {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.table-row:nth-child(even) {
+    background-color: #f2f2f2; /* Zebra striping for even rows */
+}
+
+.table-row:hover {
+    background-color: #e9ecef; /* Light gray on hover */
+}
+
+.pagination-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.alert {
+    margin-top: 20px;
+}

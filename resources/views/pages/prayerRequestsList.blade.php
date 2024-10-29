@@ -2,8 +2,12 @@
 
 @section('title', 'Prayer Requests List')
 
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css/prayerRequestList.css?v=1.5') }}">
+@endsection
+
 @section('content')
-    <div class="container">
+    <div>
         <h2 class="mb-4">Prayer Requests</h2>
 
         @if (session('success'))
@@ -18,26 +22,26 @@
             </div>
         @endif
 
-        <table class="table table-bordered">
-            <thead>
+        <table class="table prayer-requests-table table-bordered">
+            <thead class="table-header">
                 <tr>
-                    <th>ID</th>
-                    <th>Seeker ID</th>
-                    <th>Prayer Request</th>
-                    <th>Progress</th>
-                    <th>Created At</th>
-                    {{--<th>Actions</th>--}}
+                    <th class="table-header-cell">ID</th>
+                    <th class="table-header-cell">Seeker ID</th>
+                    <th class="table-header-cell">Prayer Request</th>
+                    <th class="table-header-cell">Progress</th>
+                    <th class="table-header-cell">Created At</th>
+                    {{--<th class="table-header-cell">Actions</th>--}}
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="table-body">
                 @foreach ($prayerRequests as $request)
-                    <tr>
-                        <td>{{ $request->id }}</td>
-                        <td>{{ $request->pr_seeker }}</td>
-                        <td>{{ $request->pr_prayer }}</td>
-                        <td>{{ $request->pr_progress }}</td>
-                        <td>{{ $request->created_at->format('Y-m-d H:i') }}</td>
-                        {{--<td>
+                    <tr class="table-row">
+                        <td class="table-cell">{{ $request->id }}</td>
+                        <td class="table-cell">{{ $request->pr_seeker }}</td>
+                        <td class="table-cell">{{ $request->pr_prayer }}</td>
+                        <td class="table-cell">{{ $request->pr_progress }}</td>
+                        <td class="table-cell">{{ $request->created_at->format('Y-m-d H:i') }}</td>
+                        {{--<td class="table-cell">
                             <a href="{{ route('prayer_requests.edit', $request->id) }}" class="btn btn-warning btn-sm">Edit</a>
                             <form action="{{ route('prayer_requests.destroy', $request->id) }}" method="POST" style="display:inline;">
                                 @csrf
