@@ -178,7 +178,7 @@ class SeekerController extends Controller
         $sentMessages = $sentFolder->query()->all()->get();
         
         // Get authenticated user's full name
-        $fullName = 'WOTG Mission ' . auth()->user()->user_fname . ' ' . auth()->user()->user_lname;
+        $fullName = 'Hope Refresh - WOTG - ' . auth()->user()->user_fname . ' ' . auth()->user()->user_lname;
     
         // Filter sent messages by sender name
         $filteredSentMessages = array_filter($sentMessages->all(), function($message) use ($fullName) {

@@ -25,13 +25,14 @@
                         @foreach($messages as $message)
                             @php
                                 $sender = $message['from'];
+                                $recipient = $message['to'];
                                 $senderEmail = '';
                                 if (preg_match('/<([^>]+)>/', $sender, $matches)) {
                                     $senderEmail = $matches[1]; // Get the email from the matches
                                 } else {
                                     $senderEmail = $sender; // Fallback to the sender string if no match
                                 }
-                                $alignmentClass = ($senderEmail === 'wotgmission@gmail.com') ? 'from-left' : 'from-right';
+                                $alignmentClass = ($senderEmail === 'hoperefresh@wotgonline.com') ? 'from-left' : 'from-right';
                                 // Use Carbon to format the date
                                 $formattedDate = \Carbon\Carbon::parse($message['date'])->format('F j, Y, g:i a');
 
@@ -39,6 +40,7 @@
                             <li class="email-item {{ $alignmentClass }}">
                                 <div class="message-body">
                                     <strong class="email-from from-label">From:</strong> {{ $sender }}<br>
+                                    <strong class="email-from from-label">To:</strong> {{ $recipient }}<br>
                                     <strong class="email-date">Date:</strong> {{ $formattedDate }}<br>
                                     <strong class="email-message">Message:</strong> {!! $message['body'] !!}
                                 </div>

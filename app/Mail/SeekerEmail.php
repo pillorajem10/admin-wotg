@@ -41,7 +41,7 @@ class SeekerEmail extends Mailable
      */
     public function build()
     {
-        return $this->from('hoperefresh@wotgonline.com', 'WOTG Mission ' . $this->fname . ' ' . $this->lname)
+        return $this->from('hoperefresh@wotgonline.com', 'Hope Refresh - WOTG - ' . $this->fname . ' ' . $this->lname)
                     ->subject($this->subject)
                     ->view('emails.seekerEmail')
                     ->with([

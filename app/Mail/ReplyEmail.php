@@ -33,7 +33,7 @@ class ReplyEmail extends Mailable
     public function build()
     {
         return $this
-            ->from('hoperefresh@wotgonline.com', 'WOTG Mission ' . $this->fname . ' ' . $this->lname)
+            ->from('hoperefresh@wotgonline.com', 'Hope Refresh - WOTG - ' . $this->fname . ' ' . $this->lname)
             ->subject('Re: ' . $this->subject) // Keep the subject to match the original thread
             ->view('emails.reply')
             ->with([
