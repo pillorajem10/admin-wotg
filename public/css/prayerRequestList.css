@@ -2,6 +2,10 @@
     margin-top: 20px;
 }
 
+.table-container {
+    overflow-x: auto; /* Allow horizontal scrolling */
+}
+
 .prayer-requests-table {
     width: 100%;
     border-collapse: collapse;
@@ -56,4 +60,13 @@
     background-color: #a93226; /* Optional hover effect */
     text-decoration: none; /* Remove underline */
     color: white;
+}
+
+/* Media Query for Responsive Adjustments */
+@media (max-width: 768px) {
+    .table-header-cell,
+    .table-cell {
+        padding: 0px; /* Reduced padding */
+        font-size: 10px; /* Smaller font size */
+    }
 }
