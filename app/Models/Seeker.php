@@ -28,6 +28,7 @@ class Seeker extends Model
         'seeker_status',
         'seeker_dgroup_leader',
         'seeker_catch_from',
+        'seeker_already_member', // Add this line
     ];
 
     // Optionally, you can define any casts if needed
@@ -35,5 +36,6 @@ class Seeker extends Model
         'seeker_age' => 'integer',
         'seeker_missionary' => 'string', // or 'boolean' if you prefer
         'seeker_dgroup_leader' => 'string', // or 'boolean' if you prefer
+        'seeker_already_member' => 'string', // Optional cast
     ];
 }

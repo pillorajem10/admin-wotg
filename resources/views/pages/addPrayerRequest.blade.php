@@ -3,7 +3,7 @@
 @section('title', 'Add Prayer Request')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/addPrayerRequest.css?v=1.5') }}">
+    <link rel="stylesheet" href="{{ asset('css/addPrayerRequest.css?v=1.6') }}">
 @endsection
 
 @section('content')
@@ -24,6 +24,14 @@
             <div class="form-group">
                 <label for="pr_prayer" class="form-label">Prayer Request:</label>
                 <textarea id="pr_prayer" name="pr_prayer" class="form-textarea" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="pr_private" class="form-label">Privacy:</label>
+                <select id="pr_private" name="pr_private" class="form-select" required>
+                    <option value=1>Private</option>
+                    <option value=0>Public</option>
+                </select>
             </div>
 
             <div class="text-center">

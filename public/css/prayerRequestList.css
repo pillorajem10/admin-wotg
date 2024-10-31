@@ -62,6 +62,32 @@
     color: white;
 }
 
+/* Styles for the filter form */
+.filter-form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Adjust space below the filter */
+}
+
+.form-label {
+    margin-right: 10px; /* Space between label and select */
+    font-weight: bold; /* Optional: make label bold */
+}
+
+.filter-select {
+    padding: 8px; /* Padding inside the select */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 4px; /* Rounded corners */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+/* Optional: Change border color on focus */
+.filter-select:focus {
+    border-color: #007bff; /* Change border color when focused */
+    outline: none; /* Remove default outline */
+}
+
+
 /* Media Query for Responsive Adjustments */
 @media (max-width: 768px) {
     .table-header-cell,

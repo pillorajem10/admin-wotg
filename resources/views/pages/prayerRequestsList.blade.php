@@ -3,7 +3,7 @@
 @section('title', 'Prayer Requests List')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/prayerRequestList.css?v=1.5') }}">
+    <link rel="stylesheet" href="{{ asset('css/prayerRequestList.css?v=1.6') }}">
 @endsection
 
 @section('content')
@@ -24,34 +24,37 @@
             <a href="{{ route('prayerRequest.create') }}" class="btn-custom">Add Prayer Request</a>
         </div>
 
+        <!-- Filter Form -->
+        <form method="GET" action="{{ route('prayerRequest.index') }}" class="filter-form mb-3">
+            <label for="filter" class="form-label">Status:</label>
+            <select id="filter" name="filter" class="form-select filter-select" onchange="this.form.submit()">
+                <option value="all" {{ $filter === 'all' ? 'selected' : '' }}>All</option>
+                <option value="answered" {{ $filter === 'answered' ? 'selected' : '' }}>Answered</option>
+                <option value="unanswered" {{ $filter === 'unanswered' ? 'selected' : '' }}>Unanswered</option>
+            </select>
+        </form>
+
         <div class="table-container">
             <table class="table prayer-requests-table table-bordered">
                 <thead class="table-header">
                     <tr>
-                        <th class="table-header-cell">ID</th>
-                        <th class="table-header-cell">Seeker Full Name</th>
-                        <th class="table-header-cell">Prayer Request</th>
-                        <th class="table-header-cell">Progress</th>
                         <th class="table-header-cell">Requested Date</th>
-                        {{-- <th class="table-header-cell">Actions</th> --}}
+                        <th class="table-header-cell">Name</th>
+                        <th class="table-header-cell">Request</th>
+                        <th class="table-header-cell">Date Answered</th>
+                        <th class="table-header-cell">Actions</th>
                     </tr>
                 </thead>
                 <tbody class="table-body">
                     @foreach ($prayerRequests as $request)
-                        <tr class="table-row">
-                            <td class="table-cell">{{ $request->id }}</td>
+                        <tr class="table-row" style="{{ $request->pr_progress === 'answered' ? 'background-color: lightgreen;' : '' }}">
+                            <td class="table-cell">{{ \Carbon\Carbon::parse($request->created_at)->format('F j, Y') }}</td>
                             <td class="table-cell">{{ $request->seeker->seeker_fname . ' ' . $request->seeker->seeker_lname ?? 'N/A' }}</td>
                             <td class="table-cell">{{ $request->pr_prayer }}</td>
-                            <td class="table-cell">{{ $request->pr_progress }}</td>
-                            <td class="table-cell">{{ \Carbon\Carbon::parse($request->created_at)->format('F j, Y') }}</td>
-                            {{-- <td class="table-cell">
-                                <a href="{{ route('prayer_requests.edit', $request->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                                <form action="{{ route('prayer_requests.destroy', $request->id) }}" method="POST" style="display:inline;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                </form>
-                            </td> --}}
+                            <td class="table-cell">{{ $request->pr_answered_prayer_date ?? 'Not Yet Answered' }}</td>
+                            <td class="table-cell">
+                                <a href="{{ route('prayerRequest.edit', $request->id) }}" class="btn btn-warning btn-sm">View</a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

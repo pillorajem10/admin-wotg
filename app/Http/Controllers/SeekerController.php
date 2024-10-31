@@ -68,18 +68,19 @@ class SeekerController extends Controller
             'seeker_country' => 'required|string|max:255',
             'seeker_city' => 'required|string|max:255',
             'seeker_catch_from' => 'nullable|string|max:255',
+            'seeker_already_member' => 'nullable|string|max:50', // Add validation for seeker_already_member
         ]);
-    
+        
         // Create a new seeker with default values
         Seeker::create(array_merge($request->all(), [
             'seeker_missionary' => null,          // Default to null
-            'seeker_dgroup_leader' => null,       // Default to null
+            // 'seeker_dgroup_leader' => $request->seeker_dgroup_leader,       // Default to null
             'seeker_status' => 'Infant',           // Default to 'Infant'
         ]));
-    
+        
         // Redirect or return response
-        return redirect()->route('seekers.signup')->with('success', 'Thank you for registering and decided to become part of our community.');
-    }
+        return redirect()->route('seekers.signup')->with('success', 'Thank you for registering and deciding to become part of our community.');
+    }    
     
 
 

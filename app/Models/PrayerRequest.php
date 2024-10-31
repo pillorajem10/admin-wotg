@@ -16,6 +16,8 @@ class PrayerRequest extends Model
         'pr_seeker',
         'pr_prayer',
         'pr_progress',
+        'pr_private',                  
+        'pr_answered_prayer_date',     
     ];
 
     // Define the relationship with User (pr_missionary)

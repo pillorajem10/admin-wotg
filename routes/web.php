@@ -47,3 +47,5 @@ Route::get('/blogs/{id}', [BlogController::class, 'show'])->name('blogs.show');
 Route::get('/prayer-requests', [PrayerRequestController::class, 'index'])->name('prayerRequest.index');
 Route::get('/prayer-requests/create', [PrayerRequestController::class, 'create'])->name('prayerRequest.create');
 Route::post('/prayer-requests', [PrayerRequestController::class, 'store'])->name('prayerRequest.store');
+Route::get('/prayer-requests/{id}/edit', [PrayerRequestController::class, 'edit'])->name('prayerRequest.edit');
+Route::put('/prayer-requests/{id}', [PrayerRequestController::class, 'update'])->name('prayerRequest.update');
