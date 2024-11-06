@@ -63,24 +63,32 @@ class SeekerController extends Controller
             'seeker_lname' => 'required|string|max:255',
             'seeker_nickname' => 'nullable|string|max:255',
             'seeker_gender' => 'required|string',
-            'seeker_age' => 'required|integer',
             'seeker_email' => 'required|string|email|max:255|unique:seekers',
             'seeker_country' => 'required|string|max:255',
             'seeker_city' => 'required|string|max:255',
             'seeker_catch_from' => 'nullable|string|max:255',
             'seeker_already_member' => 'nullable|string|max:50', // Add validation for seeker_already_member
+            'seeker_dob' => 'nullable|date', // Validate that seeker_dob is a valid date
         ]);
-        
-        // Create a new seeker with default values
+    
+        // Calculate the age based on seeker_dob
+        if ($request->has('seeker_dob') && $request->seeker_dob) {
+            $dob = Carbon::parse($request->seeker_dob); // Parse the date of birth
+            $seeker_age = $dob->age; // Calculate the age
+        } else {
+            $seeker_age = null; // If dob is not provided, set age to null
+        }
+    
+        // Create a new seeker with default values and calculated age
         Seeker::create(array_merge($request->all(), [
+            'seeker_age' => $seeker_age,          // Set the calculated age
             'seeker_missionary' => null,          // Default to null
-            // 'seeker_dgroup_leader' => $request->seeker_dgroup_leader,       // Default to null
-            'seeker_status' => 'Infant',           // Default to 'Infant'
+            'seeker_status' => 'Infant',          // Default to 'Infant'
         ]));
-        
+    
         // Redirect or return response
         return redirect()->route('seekers.signup')->with('success', 'Thank you for registering and deciding to become part of our community.');
-    }    
+    }  
     
 
 

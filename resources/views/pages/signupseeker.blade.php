@@ -3,7 +3,7 @@
 @section('title', 'Sign Up Seeker')
 
 @section('content')
-    <link rel="stylesheet" href="{{ asset('css/signUpSeeker.css?v=1.6') }}">
+    <link rel="stylesheet" href="{{ asset('css/signUpSeeker.css?v=1.7') }}">
     <div class="signup-container">
         <h2 class="signup-title">Become part of our community.</h2>
 
@@ -46,10 +46,11 @@
                             <option value="other">Other</option>
                         </select>
                     </div>
-        
+
+                    <!-- Removed age field, added DOB -->
                     <div class="form-group">
-                        <label for="seeker_age">Age</label>
-                        <input type="number" name="seeker_age" id="seeker_age" class="input-field" required>
+                        <label for="seeker_dob">Date of Birth</label>
+                        <input type="date" name="seeker_dob" id="seeker_dob" class="input-field" required>
                     </div>
 
                     <div class="form-group" id="dgroup_leader_group" style="display: none;">
@@ -98,6 +99,6 @@
             </div>
         </form>
 
-        <script src="{{ asset('js/signupSeeker.js?v=1.6') }}"></script>
+        <script src="{{ asset('js/signupSeeker.js?v=1.7') }}"></script>
     </div>
 @endsection

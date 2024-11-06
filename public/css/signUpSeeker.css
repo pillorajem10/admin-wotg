@@ -1,3 +1,4 @@
+/* Base styles */
 .signup-form {
     display: flex;
 }
@@ -72,4 +73,26 @@
     background-color: #f8d7da;
     color: #721c24;
     border: 1px solid #f5c6cb;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 600px) {
+    .signup-title {
+        font-size: 20px; /* Reduce the font size of the title */
+    }
+
+    .form-group label {
+        font-size: 12px; /* Smaller font size for labels */
+    }
+
+    .input-field,
+    .input-select {
+        font-size: 12px; /* Smaller font size for inputs and selects */
+        padding: 5px;   /* Reduce padding */
+    }
+
+    .btn-register {
+        font-size: 14px; /* Reduce font size of the button */
+        padding: 10px;   /* Reduce padding for button */
+    }
 }

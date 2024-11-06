@@ -28,7 +28,8 @@ class Seeker extends Model
         'seeker_status',
         'seeker_dgroup_leader',
         'seeker_catch_from',
-        'seeker_already_member', // Add this line
+        'seeker_already_member',
+        'seeker_dob', // Add seeker_dob to the fillable array
     ];
 
     // Optionally, you can define any casts if needed
@@ -37,5 +38,6 @@ class Seeker extends Model
         'seeker_missionary' => 'string', // or 'boolean' if you prefer
         'seeker_dgroup_leader' => 'string', // or 'boolean' if you prefer
         'seeker_already_member' => 'string', // Optional cast
+        'seeker_dob' => 'date', 
     ];
 }

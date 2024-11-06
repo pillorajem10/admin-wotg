@@ -3,7 +3,7 @@
 @section('title', 'Add Prayer Request')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/addPrayerRequest.css?v=1.6') }}">
+    <link rel="stylesheet" href="{{ asset('css/addPrayerRequest.css?v=1.7') }}">
 @endsection
 
 @section('content')
