@@ -3,11 +3,20 @@
 @section('title', 'Home')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/home.css?v=1.7') }}">
+    <link rel="stylesheet" href="{{ asset('css/home.css?v=1.8') }}">
 @endsection
 
 @section('content')
     <h2>Welcome, {{ $user->user_fname }}!</h2>
+
+    <div class="page-header">
+        <div>
+            Romans 1:16
+        </div>
+        <div>
+            “For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes…”
+        </div>
+    </div>
 
     <div class="custom-card">
         <div class="card-header">

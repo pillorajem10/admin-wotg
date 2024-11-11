@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SeekerController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PrayerRequestController;
 
@@ -49,3 +50,9 @@ Route::get('/prayer-requests/create', [PrayerRequestController::class, 'create']
 Route::post('/prayer-requests', [PrayerRequestController::class, 'store'])->name('prayerRequest.store');
 Route::get('/prayer-requests/{id}/edit', [PrayerRequestController::class, 'edit'])->name('prayerRequest.edit');
 Route::put('/prayer-requests/{id}', [PrayerRequestController::class, 'update'])->name('prayerRequest.update');
+
+// USER ROUTES
+Route::get('/password/forgot', [UserController::class, 'showForgotPasswordForm'])->name('password.forgot');
+Route::post('/password/forgot', [UserController::class, 'sendPasswordResetLink'])->name('password.send');
+Route::get('/password/reset/{token}', [UserController::class, 'showResetPasswordForm'])->name('password.reset.form');
+Route::post('/password/reset', [UserController::class, 'resetPassword'])->name('password.reset');

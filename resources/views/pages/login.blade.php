@@ -37,6 +37,7 @@
 
         <div style="margin-top: 20px; text-align: center;">
             <p>Don't have an account? <a href="{{ route('signup') }}">Sign Up here</a>.</p>
+            <p>Forgot password? <a href="{{ route('password.forgot') }}">Click here</a></p> <!-- Forgot password link -->
         </div>
     </div>
 @endsection
