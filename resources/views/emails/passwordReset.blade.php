@@ -17,6 +17,6 @@
     <p>If you have any issues or did not request a password reset, please contact our support team.</p>
 
     <p>Thank you,</p>
-    <p>Your Support Team</p>
+    <p>WOTG DM</p>
 </body>
 </html>

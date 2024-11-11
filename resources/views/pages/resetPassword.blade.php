@@ -41,5 +41,10 @@
                 <button type="submit" class="auth-button">Reset Password</button>
             </div>
         </form>
+
+        <!-- Go back to login link -->
+        <div class="go-back-link" style="text-align: center; margin-top: 20px;">
+            <p>Remembered your password? <a href="{{ route('auth.login') }}">Go back to login</a></p>
+        </div>
     </div>
 @endsection
