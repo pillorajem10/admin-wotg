@@ -3,7 +3,7 @@
 @section('title', 'Seekers List')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/seekersList.css?v=1.8') }}">
+    <link rel="stylesheet" href="{{ asset('css/seekersList.css?v=1.9') }}">
 @endsection
 
 @section('content')
@@ -33,7 +33,10 @@
             <table class="seeker-table">
                 <thead>
                     <tr>
-                        <th>Select</th>
+                        <th>
+                            <!-- Select All Checkbox -->
+                            <input type="checkbox" id="selectAll" class="select-all-checkbox">
+                        </th>
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
@@ -67,7 +70,13 @@
             <div class="modal-content">
                 <span class="close-button" id="closeModal">&times;</span>
                 <h2>Send Email to Selected Seekers</h2>
-        
+
+                <!-- Display selected emails here -->
+                <div id="selectedEmailsContainer">
+                    <label for="emailsTo">To: </label>
+                    <input type="text" id="emailsTo" name="emailsTo" readonly class="emails-display" placeholder="No emails selected" />
+                </div>
+
                 <form id="contactForm" action="{{ route('seekers.sendEmail') }}" method="POST">
                     @csrf
                     <input type="text" id="subject" name="subject" placeholder="Subject" required>
@@ -77,6 +86,6 @@
             </div>
         </div>
 
-        <script src="{{ asset('js/seekers.js?v=1.8') }}"></script>
+        <script src="{{ asset('js/seekers.js?v=1.9') }}"></script>
     </div>
 @endsection

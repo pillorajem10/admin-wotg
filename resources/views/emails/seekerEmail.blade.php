@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>New Seeker Notification</title>
+    <title>{{ $subject }}</title> <!-- Dynamic title based on the email subject -->
 </head>
 <body>
     <p>{{ $body }}</p>

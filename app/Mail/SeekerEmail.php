@@ -43,10 +43,11 @@ class SeekerEmail extends Mailable
     {
         return $this->from('hoperefresh@wotgonline.com', 'Hope Refresh - WOTG - ' . $this->fname . ' ' . $this->lname)
                     ->subject($this->subject)
-                    ->view('emails.seekerEmail')
+                    ->view('emails.seekerEmail') // View name
                     ->with([
                         'body' => $this->body,
                         'dateTime' => $this->dateTime, // Pass the dateTime to the view
+                        'subject' => $this->subject, // Pass the subject to the view
                     ]);
-    }
+    }    
 }

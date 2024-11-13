@@ -112,8 +112,8 @@ class SeekerController extends Controller
     {
         // Validate the incoming request
         $request->validate([
-            'seeker_status' => 'required|string|in:Infant,Child,Adult,Parent',
-        ]);
+            'seeker_status' => 'required|string|in:New Seeker,Engaged,Gospel Shared,D-group Member,Not Ready',
+        ]);        
 
         // Find the seeker by ID
         $seeker = Seeker::findOrFail($id);
@@ -151,11 +151,21 @@ class SeekerController extends Controller
     
         // Send an email to each address
         foreach ($emails as $email) {
-            Mail::to(trim($email))->send(new SeekerEmail($fname, $lname, $request->subject, $request->body, $dateTime));
+            // Find the Seeker by email
+            $seeker = Seeker::where('seeker_email', trim($email))->first();
+    
+            if ($seeker) {
+                // Replace [fname] in the body with the actual first name of the Seeker
+                $body = str_replace('[fname]', $seeker->seeker_fname, $request->body);
+    
+                // Send email to this specific Seeker
+                Mail::to(trim($email))->send(new SeekerEmail($fname, $lname, $request->subject, $body, $dateTime));
+            }
         }
     
         return redirect()->back()->with('success', 'Emails sent successfully!');
     }
+    
 
 
 

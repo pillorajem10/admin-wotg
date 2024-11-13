@@ -3,7 +3,7 @@
 @section('title', 'Seeker Details')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/seekerDetails.css?v=1.8') }}">
+    <link rel="stylesheet" href="{{ asset('css/seekerDetails.css?v=1.9') }}">
 @endsection
 
 @section('content')
@@ -28,11 +28,12 @@
             <div>
                 <strong>Status:</strong>
                 <select name="seeker_status" id="seeker_status" onchange="this.form.submit()">
-                    <option value="Infant" {{ $seeker->seeker_status == 'Infant' ? 'selected' : '' }}>Infant</option>
-                    <option value="Child" {{ $seeker->seeker_status == 'Child' ? 'selected' : '' }}>Child</option>
-                    <option value="Adult" {{ $seeker->seeker_status == 'Adult' ? 'selected' : '' }}>Adult</option>
-                    <option value="Parent" {{ $seeker->seeker_status == 'Parent' ? 'selected' : '' }}>Parent</option>
-                </select>
+                    <option value="New Seeker" {{ $seeker->seeker_status == 'New Seeker' ? 'selected' : '' }}>New Seeker</option>
+                    <option value="Engaged" {{ $seeker->seeker_status == 'Engaged' ? 'selected' : '' }}>Engaged</option>
+                    <option value="Gospel Shared" {{ $seeker->seeker_status == 'Gospel Shared' ? 'selected' : '' }}>Gospel Shared</option>
+                    <option value="D-group Member" {{ $seeker->seeker_status == 'D-group Member' ? 'selected' : '' }}>D-group Member</option>
+                    <option value="Not Ready" {{ $seeker->seeker_status == 'Not Ready' ? 'selected' : '' }}>Not Ready</option>
+                </select>                
             </div>
         </form>
     </div>
