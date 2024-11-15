@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <div>
+    <div class="blogs-container">
         @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif

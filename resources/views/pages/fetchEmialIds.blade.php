@@ -7,6 +7,11 @@
 @endsection
 
 @section('content')
+    <!-- Loading Overlay -->
+    <div id="loading-overlay">
+        <div class="spinner"></div> <!-- Spinner -->
+    </div>
+
     <div class="inbox-container">
         <h1 class="inbox-title">Inbox</h1>
         
@@ -35,7 +40,6 @@
                                 $alignmentClass = ($senderEmail === 'hoperefresh@wotgonline.com') ? 'from-left' : 'from-right';
                                 // Use Carbon to format the date
                                 $formattedDate = \Carbon\Carbon::parse($message['date'])->format('F j, Y, g:i a');
-
                             @endphp
                             <li class="email-item {{ $alignmentClass }}">
                                 <div class="message-body">

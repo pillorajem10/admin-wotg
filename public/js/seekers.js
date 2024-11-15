@@ -69,4 +69,18 @@ document.addEventListener('DOMContentLoaded', function() {
         bodyInput.value = '';
         emailsToField.value = ''; // Clear the "To:" field when closing the modal
     }
+
+    CKEDITOR.replace('body', {
+        toolbar: [
+            { name: 'document', items: ['Source', '-', 'Save', 'NewPage', 'Preview'] },
+            { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'Undo', 'Redo'] },
+            { name: 'editing', items: ['Find', 'Replace', 'SelectAll'] },
+            { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike'] },
+            { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote'] },
+            { name: 'styles', items: ['Styles', 'Format'] },
+            { name: 'colors', items: ['TextColor', 'BGColor'] },
+            { name: 'insert', items: ['Image', 'Table', 'HorizontalRule', 'SpecialChar'] },
+            { name: 'tools', items: ['Maximize', 'ShowBlocks'] }
+        ],
+    });
 });

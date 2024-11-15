@@ -4,6 +4,6 @@
     <title>{{ $subject }}</title> <!-- Dynamic title based on the email subject -->
 </head>
 <body>
-    <p>{{ $body }}</p>
+    <p>{!! $body !!}</p>
 </body>
 </html>

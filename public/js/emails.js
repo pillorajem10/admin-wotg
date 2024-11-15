@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const loadingOverlay = document.getElementById('loading-overlay');
+    loadingOverlay.style.display = 'none';  // Hide the overlay immediately after content is loaded
     // Get the modal
     var modal = document.getElementById('replyModal');
 

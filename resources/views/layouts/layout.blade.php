@@ -185,9 +185,9 @@
         </aside>               
 
         <div class="main-content">
-            <header>
+            {{--<header>
                 <h1 class="header-title">@yield('title', 'Dashboard')</h1>
-            </header>
+            </header>--}}
             <div class="cards">
                 @yield('content')
             </div>
