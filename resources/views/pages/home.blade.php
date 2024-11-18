@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 @endsection
 
-
-
 @section('content')
     <div class="header-container">
         <div>
@@ -23,19 +21,10 @@
             <div class="spinner"></div> <!-- Spinner inside the overlay -->
         </div>
 
-
-
         <h2>Welcome, {{ $user->user_fname }}!</h2>
 
-        {{--<div class="page-header">
-            <div>
-                Romans 1:16
-            </div>
-            <div>
-                “For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes…”
-            </div>
-        </div>--}}
-
+        <!-- Custom Cards Section - COMMENTED OUT -->
+        {{-- 
         <div class="custom-card">
             <div class="card-header">
                 Seekers Count
@@ -57,8 +46,21 @@
                 <a href="{{ route('blogs.index') }}" class="btn-view">View Blogs</a>
             </div>
         </div>
+        --}}
 
+        <div class="custom-card">
+            <div class="card-header">
+                Resources and Tools
+            </div>
+            <div class="card-body">
+                <div class="btn-container">
+                    <a href="{{ route('static.faq') }}" class="btn btn-main">FAQs</a>
+                    <a href="{{ route('static.plantDisc') }}" class="btn btn-main">PLANT Discipleship</a>
+                    <a href="{{ route('static.tipsForBuildingRelationships') }}" class="btn btn-main">Practical Tips for Building Relationships</a>
+                    <a href="{{ route('static.gabay') }}" class="btn btn-main">Gabay para sa Missionaries: ANG DAAN PATUNGONG LANGIT</a>
+                </div>
+            </div>
+        </div>              
         <script src="{{ asset('js/home.js') }}"></script>
     </div>
 @endsection
-

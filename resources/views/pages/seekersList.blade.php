@@ -3,7 +3,7 @@
 @section('title', 'Seekers List')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/seekersList.css?v=2.0') }}">
+    <link rel="stylesheet" href="{{ asset('css/seekersList.css?v=2.1') }}">
 @endsection
 
 @section('content')
@@ -86,7 +86,7 @@
             </div>
         </div>
 
-        <script src="{{ asset('js/seekers.js?v=2.0') }}"></script>
+        <script src="{{ asset('js/seekers.js?v=2.1') }}"></script>
         <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
     </div>
 @endsection

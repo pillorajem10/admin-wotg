@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PrayerRequestController;
+use App\Http\Controllers\StaticPagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,3 +57,9 @@ Route::get('/password/forgot', [UserController::class, 'showForgotPasswordForm']
 Route::post('/password/forgot', [UserController::class, 'sendPasswordResetLink'])->name('password.send');
 Route::get('/password/reset/{token}', [UserController::class, 'showResetPasswordForm'])->name('password.reset.form');
 Route::post('/password/reset', [UserController::class, 'resetPassword'])->name('password.reset');
+
+// STATIC PAGES
+Route::get('/faq', [StaticPagesController::class, 'showFaqPage'])->name('static.faq');
+Route::get('/plantdiscipleship', [StaticPagesController::class, 'showPlantDiscPage'])->name('static.plantDisc');
+Route::get('/tips-for-building-relationships', [StaticPagesController::class, 'showTipsForBuildingRelationships'])->name('static.tipsForBuildingRelationships');
+Route::get('/gabay', [StaticPagesController::class, 'showGabayPage'])->name('static.gabay');

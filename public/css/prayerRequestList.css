@@ -1,5 +1,6 @@
-.container {
-    margin-top: 20px;
+.pr-container {
+    padding: 20px;
+    margin-top: 4rem;
 }
 
 .table-container {

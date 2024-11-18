@@ -1,0 +1,71 @@
+/* faq.css */
+
+/* Overall container styling */
+.faq-cont {
+    margin-top: 5rem;
+    padding: 0 1rem;
+    background-color: #f9f9f9;
+}
+
+/* FAQ Title */
+.faq-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+/* Section titles (category titles) */
+.faq-category-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #c0392b;
+    border-bottom: 2px solid #c0392b;
+    padding-bottom: 5px;
+    margin-bottom: 1rem;
+}
+
+/* FAQ Item styling */
+.faq-item {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* FAQ Question */
+.faq-question {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* FAQ Answer */
+.faq-answer {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.faq-answer ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+}
+
+/* Styling for the links inside the answers */
+.faq-answer a {
+    color: #c0392b;
+    text-decoration: none;
+}
+
+.faq-answer a:hover {
+    text-decoration: underline;
+}

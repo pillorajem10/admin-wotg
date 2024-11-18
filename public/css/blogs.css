@@ -172,6 +172,11 @@
     color: #fff;
 }
 
+.blogs-container {
+    padding: 20px;
+    margin-top: 4rem;
+}
+
 @media (max-width: 800px) {
     .blog-table-header-cell, .blog-table-cell {
         font-size: 0.7rem; /* Lower font size */

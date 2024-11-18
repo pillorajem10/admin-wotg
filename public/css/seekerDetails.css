@@ -49,3 +49,8 @@
     background-color: #c0392b; /* Dark red background on hover */
     color: white; /* Font color becomes white on hover */
 }
+
+.seeker-deets-cont {
+    margin-top: 4rem;
+    padding: 2rem;
+}

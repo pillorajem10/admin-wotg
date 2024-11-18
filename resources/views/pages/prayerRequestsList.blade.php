@@ -3,11 +3,11 @@
 @section('title', 'Prayer Requests List')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/prayerRequestList.css?v=2.0') }}">
+    <link rel="stylesheet" href="{{ asset('css/prayerRequestList.css?v=2.1') }}">
 @endsection
 
 @section('content')
-    <div>
+    <div class="pr-container">
         @if (session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
