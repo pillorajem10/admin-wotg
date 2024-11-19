@@ -1,0 +1,153 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    margin-top: 5rem;
+    color: #333;
+}
+
+/* Container for content */
+.container.daan-cont {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Main Title */
+.heading-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #c0392b;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Intro Text */
+.intro-text {
+    font-size: 1.2em;
+    color: #555;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Ordered List for Truths */
+.truth-list {
+    list-style-type: decimal;
+    padding-left: 20px;
+    margin-top: 0;
+}
+
+.truth-item {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+/* Truth Headings */
+.truth-heading {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #c0392b;
+    margin-bottom: 10px;
+}
+
+/* Truth Verse (Bible verses) */
+.truth-verse {
+    font-size: 1em;
+    font-style: italic;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Faith Statement */
+.faith-statement {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Prayer Text (Blockquote) */
+.prayer-text {
+    background-color: #f7f7f7;
+    border-left: 5px solid #c0392b;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    font-style: italic;
+    color: #444;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Salvation Points */
+.salvation-result {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.salvation-points {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+
+.salvation-point {
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Growth Tips */
+.growth-guide {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.growth-points {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+
+.growth-point {
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* List Item Styling (with check icon) */
+.growth-point::before {
+    content: '✔';
+    color: #4CAF50;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .container.daan-cont {
+        padding: 15px;
+    }
+
+    .heading-title {
+        font-size: 2em;
+    }
+
+    .intro-text, .faith-statement, .salvation-result, .growth-guide {
+        font-size: 1em;
+    }
+
+    .truth-verse, .salvation-point, .growth-point {
+        font-size: 0.9em;
+    }
+}

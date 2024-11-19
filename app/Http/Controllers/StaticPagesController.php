@@ -45,4 +45,14 @@ class StaticPagesController extends Controller
     {
         return view('pages.gabay');
     }
+
+    /**
+     * Show the Daan Papuntang Langit Page.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showDaanPage()
+    {
+        return view('pages.daanPapuntangLangit');
+    }
 }

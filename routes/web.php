@@ -63,3 +63,4 @@ Route::get('/faq', [StaticPagesController::class, 'showFaqPage'])->name('static.
 Route::get('/plantdiscipleship', [StaticPagesController::class, 'showPlantDiscPage'])->name('static.plantDisc');
 Route::get('/tips-for-building-relationships', [StaticPagesController::class, 'showTipsForBuildingRelationships'])->name('static.tipsForBuildingRelationships');
 Route::get('/gabay', [StaticPagesController::class, 'showGabayPage'])->name('static.gabay');
+Route::get('/daan', [StaticPagesController::class, 'showDaanPage'])->name('static.daan');
