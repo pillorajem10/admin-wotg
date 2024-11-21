@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 class StaticPagesController extends Controller
 {
     /**
+     * Show the Resources And Tools page.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showResourcesAndToolsPage()
+    {
+        return view('pages.resourcesAndTools');
+    }
+    /**
      * Show the FAQ page.
      *
      * @return \Illuminate\View\View

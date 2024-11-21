@@ -1,0 +1,231 @@
+.custom-card {
+    border: 1px solid #e0e0e0; /* Light grey border */
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px 0; /* Space above and below the card */
+    padding: 20px; /* Inner padding */
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.custom-card:hover {
+    transform: translateY(-5px); /* Lift the card on hover */
+}
+
+.card-header {
+    font-size: 1.5em; /* Larger font for the header */
+    font-weight: bold; /* Bold text */
+    color: #333; /* Dark grey color */
+    border-bottom: 2px solid #c0392b; /* Blue bottom border */
+    padding-bottom: 10px; /* Space below header */
+}
+
+.page-header {
+    background-color: #f5f5f5; /* Light background for contrast */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px; /* Rounded corners */
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the Verse (Romans 1:16) */
+.page-header div:first-child {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Style for the Quote Text */
+.page-header div:last-child {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #666;
+}
+
+.card-body {
+    padding: 15px 0; /* Vertical padding for body */
+}
+
+.card-title {
+    font-size: 2em; /* Large font for the title */
+    color: #c0392b; /* Blue color for emphasis */
+    margin: 0; /* Remove default margin */
+}
+
+.card-text {
+    font-size: 1.2em; /* Slightly larger text */
+    color: #555; /* Medium grey color */
+}
+
+.btn-view {
+    display: inline-block; /* Align as a block for spacing */
+    padding: 10px 15px; /* Padding around the text */
+    margin-top: 15px; /* Space above the button */
+    background-color: #c0392b; /* Bootstrap primary color */
+    color: #ffffff; /* White text */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.btn-view:hover {
+    background-color: darkred; /* Darker blue on hover */
+    color: #ffffff; /* White text */
+    text-decoration: none; /* Remove underline */
+}
+
+.form-control {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 10px; /* Space above */
+}
+
+.form-control:focus {
+    border-color: #c0392b; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(192, 57, 43, 0.5); /* Add shadow on focus */
+}
+
+.header-container {
+    position: relative; /* Needed for positioning the overlay */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10%; /* Add padding to give some space around the content */
+    color: white; /* Text color to make it stand out against the background */
+    font-size: 4rem; /* Larger font size for the quote */
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.home-container {
+    padding: 2rem;
+}
+
+.header-container::before {
+    content: ''; /* Required for a pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1; /* Ensure the overlay is behind the text */
+}
+
+.header-container > * {
+    position: relative;
+    z-index: 2; /* Ensure the text is above the overlay */
+}
+
+/* Loading Overlay Styles */
+#loading-overlay {
+    position: fixed; /* Cover the whole page */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's on top */
+}
+
+#loading-overlay .spinner {
+    border: 8px solid #f3f3f3; /* Light grey background */
+    border-top: 8px solid #c0392b; /* Blue spinner */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+/* Button container to align the buttons */
+.btn-container {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+/* Base button style */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+/* Primary button style */
+.btn-main {
+    background-color: #c0392b;
+    color: white;
+    border: none;
+}
+
+.btn-main:hover {
+    background-color: #b81b09;
+    transform: translateY(-2px);
+    color: white;
+}
+
+
+/* Button focus effect for accessibility */
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.5);
+}
+
+/* Spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+@media (max-width: 768px) {
+    .page-header div:first-child {
+        font-size: 1.5rem; /* Slightly smaller for mobile */
+    }
+
+    .page-header div:last-child {
+        font-size: 1rem; /* Slightly smaller for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header div:first-child {
+        font-size: 1.25rem; /* Even smaller for very small screens */
+    }
+
+    .page-header div:last-child {
+        font-size: 0.9rem; /* Even smaller for very small screens */
+    }
+}
+
+@media (max-width: 1200px) {
+    .header-container {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .header-container {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+}

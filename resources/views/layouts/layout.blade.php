@@ -102,7 +102,7 @@
             position: fixed;
             top: 1rem;
             left: -250px; /* Initially hidden */
-            width: 150px;
+            width: 250px;
             height: 100%;
             background-color: #ad2213;
             color: white;
@@ -125,7 +125,7 @@
             color: white;
             text-decoration: none;
             display: block;
-            font-size: 14px;
+            font-size: 18px;
         }
 
         .sidebar ul li a:hover {
@@ -194,6 +194,7 @@
             <li><a href="/blogs">Blogs</a></li>
             <li><a href="/fetch-email-ids">Inbox</a></li>
             <li><a href="/prayer-requests">Prayer Requests</a></li>
+            <li><a href="/resources-and-tools">Resources And Tools</a></li>
             <li><a href="{{ route('auth.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
         </ul>
     </aside>

@@ -24,7 +24,6 @@
         <h2>Welcome, {{ $user->user_fname }}!</h2>
 
         <!-- Custom Cards Section - COMMENTED OUT -->
-        {{-- 
         <div class="custom-card">
             <div class="card-header">
                 Seekers Count
@@ -46,9 +45,8 @@
                 <a href="{{ route('blogs.index') }}" class="btn-view">View Blogs</a>
             </div>
         </div>
-        --}}
 
-        <div class="custom-card">
+        {{--<div class="custom-card">
             <div class="card-header">
                 Resources and Tools
             </div>
@@ -61,7 +59,7 @@
                     <a href="{{ route('static.gabay') }}" class="btn btn-main">Gabay para sa Missionaries: ANG DAAN PATUNGONG LANGIT</a>
                 </div>
             </div>
-        </div>              
+        </div>--}}            
         <script src="{{ asset('js/home.js') }}"></script>
     </div>
 @endsection

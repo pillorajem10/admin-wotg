@@ -3,7 +3,7 @@
 @section('title', 'Inbox')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/inbox.css?v=2.1') }}">
+    <link rel="stylesheet" href="{{ asset('css/inbox.css?v=2.2') }}">
 @endsection
 
 @section('content')
@@ -76,5 +76,5 @@
         </div>
     </div>
 
-    <script src="{{ asset('js/emails.js?v=2.1') }}"></script>
+    <script src="{{ asset('js/emails.js?v=2.2') }}"></script>
 @endsection
