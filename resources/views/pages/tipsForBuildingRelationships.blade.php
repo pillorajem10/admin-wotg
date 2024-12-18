@@ -3,7 +3,7 @@
 @section('title', 'Practical Tips for Building Relationships')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/tipsForBuildingRelationships.css?v=2.4') }}">
+    <link rel="stylesheet" href="{{ asset('css/tipsForBuildingRelationships.css?v=2.5') }}">
 @endsection
 
 @section('content')

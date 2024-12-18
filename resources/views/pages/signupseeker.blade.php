@@ -3,7 +3,7 @@
 @section('title', 'Sign Up Seeker')
 
 @section('content')
-    <link rel="stylesheet" href="{{ asset('css/signUpSeeker.css?v=2.4') }}">
+    <link rel="stylesheet" href="{{ asset('css/signUpSeeker.css?v=2.5') }}">
     <div class="signup-container">
         <h2 class="signup-title">Become part of our community.</h2>
 
@@ -99,6 +99,6 @@
             </div>
         </form>
 
-        <script src="{{ asset('js/signupSeeker.js?v=2.4') }}"></script>
+        <script src="{{ asset('js/signupSeeker.js?v=2.5') }}"></script>
     </div>
 @endsection

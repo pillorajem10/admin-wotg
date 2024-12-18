@@ -3,7 +3,7 @@
 @section('title', 'Daan Papuntang Langit')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/daanPapuntangLangit.css?v=2.4') }}">
+    <link rel="stylesheet" href="{{ asset('css/daanPapuntangLangit.css?v=2.5') }}">
 @endsection
 
 @section('content')

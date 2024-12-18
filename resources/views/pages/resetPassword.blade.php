@@ -3,7 +3,7 @@
 @section('title', 'Reset Password')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/resetPassword.css?v=2.4') }}">
+    <link rel="stylesheet" href="{{ asset('css/resetPassword.css?v=2.5') }}">
 @endsection
 
 @section('content')
