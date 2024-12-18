@@ -3,7 +3,7 @@
 @section('title', 'PLANT Discipleship Guide')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/plantDisc.css?v=2.3') }}">
+    <link rel="stylesheet" href="{{ asset('css/plantDisc.css?v=2.4') }}">
 @endsection
 
 @section('content')

@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    margin-top: 5rem;
+    margin-top: 1rem;
     color: #333;
 }
 
@@ -12,9 +12,11 @@ body {
     max-width: 1200px;
     margin: 50px auto;
     padding: 20px;
+    /*
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    */
     overflow: hidden;
 }
 
@@ -22,16 +24,17 @@ body {
 .heading-title {
     font-size: 2.5em;
     font-weight: bold;
-    color: #c0392b;
+    color: #992b8a;
     text-align: center;
     margin-bottom: 20px;
 }
 
 /* Intro Text */
 .intro-text {
-    font-size: 1.2em;
-    color: #555;
+    font-size: 1.5rem;
+    color: #000;
     text-align: center;
+    font-weight: bold;
     margin-bottom: 30px;
 }
 
@@ -48,20 +51,39 @@ body {
     border-bottom: 2px solid #f0f0f0;
 }
 
+em {
+    color: red;
+}
+
 /* Truth Headings */
 .truth-heading {
-    font-size: 1.4em;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #c0392b;
+    color: #fff;
+    width: 100%;
+    padding: 2rem;
+    background-color: #000;
     margin-bottom: 10px;
+}
+
+.truth-second-heading {
+    width: 100%;
+    padding: 2rem;
+    background-color: #ffe3ba;
+}
+
+.truth-second-heading h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
 }
 
 /* Truth Verse (Bible verses) */
 .truth-verse {
-    font-size: 1em;
-    font-style: italic;
+    font-size: 1.2rem;
+    font-weight: bold;
     margin-bottom: 5px;
-    color: #555;
+    color: #000;
 }
 
 /* Faith Statement */
@@ -134,7 +156,7 @@ body {
 }
 
 .truth-image {
-    max-width: 100%;
+    width: 100%;
     object-fit: cover;
     height: auto;
 }
@@ -154,6 +176,6 @@ body {
     }
 
     .truth-verse, .salvation-point, .growth-point {
-        font-size: 0.9em;
+        font-size: 1rem;
     }
 }

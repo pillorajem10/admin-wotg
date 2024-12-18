@@ -3,7 +3,7 @@
 @section('title', 'Daan Papuntang Langit')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/daanPapuntangLangit.css?v=2.3') }}">
+    <link rel="stylesheet" href="{{ asset('css/daanPapuntangLangit.css?v=2.4') }}">
 @endsection
 
 @section('content')
@@ -13,93 +13,103 @@
 
         <ol class="truth-list">
             <li class="truth-item">
-                <strong class="truth-heading">Mahal ka ng Diyos at nais Niya na magkaroon ka ng buhay na walang hanggan.</strong>
-                <p class="truth-verse">"Sapagkat gayon na lamang ang pag-ibig ng Diyos sa sangkatauhan, kaya't ibinigay niya ang kanyang kaisa-isang Anak, upang ang sinumang sumampalataya sa kanya ay hindi mapahamak, kundi magkaroon ng buhay na walang hanggan." - <em>John 3:16</em></p>
-                <p>
+                <div class="truth-heading">
+                    <strong>Mahal ka ng Diyos at nais Niya na magkaroon ka ng buhay na walang hanggan.</strong>
+                </div>
+                
+                <p class="truth-verse">"Sapagkat gayon na lamang ang pag-ibig ng Diyos sa sangkatauhan, kaya't ibinigay niya ang kanyang kaisa-isang Anak, upang ang sinumang sumampalataya sa kanya ay hindi mapahamak, kundi magkaroon ng buhay na walang hanggan." <br><em>John 3:16</em></p>
+                <div class="truth-second-heading">
                     <h3>
                         Nais din Niyang magkaron ka ng buhay na makabuluhan.
                     </h3>
-                </p>
-                <p class="truth-verse">"Dumarating ang magnanakaw para lamang magnakaw, pumatay, at manira. Naparito ako upang ang mga tupa ay magkaroon ng buhay, buhay na masaganang lubos." - <em>John 10:10</em></p>
-                <p>
+                </div>
+                <p class="truth-verse">"Dumarating ang magnanakaw para lamang magnakaw, pumatay, at manira. Naparito ako upang ang mga tupa ay magkaroon ng buhay, buhay na masaganang lubos." <br><em>John 10:10</em></p>
+                <div class="truth-second-heading">
                     <h3>
                         Kaya lang maraming tao ang hindi 
                         nakakaranas ng buhay na walang hanggan 
                         at buhay na makabuluhan sapagkat...
                     </h3>
-                </p>
+                </div>
             </li>
 
             <li class="truth-item">
-                <strong class="truth-heading">Likas na makasalanan ang tao kaya napahiwalay siya sa Diyos.</strong>
+                <div class="truth-heading">
+                    <strong>Likas na makasalanan ang tao kaya napahiwalay siya sa Diyos.</strong>
+                </div>
                 <img src="{{ asset('images/gospel_tract1.jpg') }}" alt="Image description" class="truth-image">
-                <p class="truth-verse">"Sapagkat ang lahat ay nagkasala, at walang sinumang nakaabot sa kaluwalhatian ng Diyos." - <em>Romans 3:23</em></p>
-                <p>
+                <p class="truth-verse">"Sapagkat ang lahat ay nagkasala, at walang sinumang nakaabot sa kaluwalhatian ng Diyos." <br><em>Romans 3:23</em></p>
+                <div class="truth-second-heading">
                     <h3>
                         Hindi lang sa nagkasala ang lahat ng tao 
                         kundi may bayad ang kasalanan at ang 
                         bayad ay kamatayan.                        
                     </h3>
-                </p>
-                <p class="truth-verse">"Sapagkat kamatayan ang kabayaran ng kasalanan..." - <em>Romans 6:23</em></p>
-                <p>
+                </div>
+                <p class="truth-verse">"Sapagkat kamatayan ang kabayaran ng kasalanan..." <br><em>Romans 6:23</em></p>
+                <div class="truth-second-heading">
                     <h3>
                         May dalawang klase ng kamatayan ang 
                         nasa Biblia ang una ay pisikal at ang 
                         pangalawa ay espiritwal.                                            
                     </h3>
-                </p>
-                <p class="truth-verse">"Subalit para naman sa mga duwag, mga taksil, ... at sa lahat ng mga sinungaling—ang magiging bahagi nila'y sa lawa ng nagliliyab na apoy at asupre. Ito ang pangalawang kamatayan." - <em>Revelation 21:8</em></p>
+                </div>
+                <p class="truth-verse">"Subalit para naman sa mga duwag, mga taksil, ... at sa lahat ng mga sinungaling—ang magiging bahagi nila'y sa lawa ng nagliliyab na apoy at asupre. Ito ang pangalawang kamatayan." <br><em>Revelation 21:8</em></p>
                 <img src="{{ asset('images/gospel_tract2.jpg') }}" alt="Image description" class="truth-image">
-                <p>
+                <div class="truth-second-heading">
                     <h3>
                         ..inisip ng tao na ang kanyang pagkahiwalay 
                         sa Diyos ay masosolusyunan ng...             
                     </h3>
-                </p>
+                </div>
                 <img src="{{ asset('images/gospel_tract3.jpg') }}" alt="Image description" class="truth-image">
-                <p>
+                <div class="truth-second-heading">
                     <h3>
                         Subalit ang lahat ng ito ay kapos at hindi 
                         aabot sa kaluwalhatian ng Diyos dahil ang 
                         lahat ay nagkasala.
                     </h3>
-                </p>
+                </div>
             </li>
             
 
             <li class="truth-item">
-                <strong class="truth-heading">Ang Panginoong Hesus ang tanging daan patungong langit.</strong>
-                <p class="truth-verse">"Sumagot si Jesus, “Ako ang daan, ang katotohanan, at ang buhay. Walang makakapunta sa Ama kundi sa pamamagitan ko.” - <em>John 14:6</em></p>
-                <p>
+                <div class="truth-heading">
+                    <strong>Ang Panginoong Hesus ang tanging daan patungong langit.</strong>
+                </div>
+                <p class="truth-verse">"Sumagot si Jesus, “Ako ang daan, ang katotohanan, at ang buhay. Walang makakapunta sa Ama kundi sa pamamagitan ko.” <br><em>John 14:6</em></p>
+                <div class="truth-second-heading">
                     <h3>
                         Bakit ang Panginoong Hesus lang ang daan? 
                         Dahil. Siya lang nagbayad ng lahat ng iyung 
                         kasalanan sa krus.                        
                     </h3>
-                </p>
-                <p class="truth-verse">"Sapagkat si Cristo na walang kasalanan ay namatay nang minsan para sa inyo na mga makasalanan, upang iharap kayo sa Diyos. Siya'y pinatay sa laman, at muling binuhay sa espiritu." - <em>1 Peter 3:18</em></p>
+                </div>
+                <p class="truth-verse">"Sapagkat si Cristo na walang kasalanan ay namatay nang minsan para sa inyo na mga makasalanan, upang iharap kayo sa Diyos. Siya'y pinatay sa laman, at muling binuhay sa espiritu." <br><em>1 Peter 3:18</em></p>
                 <img src="{{ asset('images/gospel_tract4.jpg') }}" alt="Image description" class="truth-image">
-                <p>
+                <div class="truth-second-heading">
                     <h3>
                         “Subalit ang malaman lang na namatay ang 
                         Panginoong Hesus para sa iyung kasalanan 
                         ay hindi sapat…”                        
                     </h3>
-                </p>
+                </div>
             </li>
 
             <li class="truth-item">
-                <strong class="truth-heading">Kailangan nating manampalataya sa Panginoong Hesus upang tayo'y maligtas.</strong>
+                <div class="truth-heading">
+                    <strong>Kailangan nating manampalataya sa Panginoong Hesus upang tayo'y maligtas.</strong>
+                </div>
                 <p class="truth-verse">"Sapagkat dahil sa kagandahang-loob ng Diyos kayo ay naligtas sa pamamagitan ng pananampalataya; at ito'y kaloob ng Diyos at hindi mula sa inyong sarili; hindi ito bunga ng inyong mga gawa kaya't walang maipagmamalaki ang sinuman." - <em>Ephesians 2:8-9</em></p>
-                <p>
+                <div class="truth-second-heading">
                     <h3>
                         Base sa Ephesians 2:8-9, kung ilalagay 
                         sa formula ang kaligtasan, alin sa mga 
                         sumusunod ang sa tingin mo ay tama?                                               
                     </h3>
-                </p>
-                <p>
+                </div>
+                <img src="{{ asset('images/gospel_tract5.jpg') }}" alt="Image description" class="truth-image">
+                <div class="truth-second-heading">
                     <h3>
                         ...ang mabuting gawa ay hindi basehan 
                         ng kaligtasan kundi ito ay by-product o 
@@ -107,7 +117,7 @@
                         totoong nanampalataya sa 
                         Panginoong Hesus.                                                                 
                     </h3>
-                </p>
+                </div>
             </li>
         </ol>
 
@@ -127,7 +137,7 @@
                     sumampalataya sa kanya ay binigyan 
                     niya ng karapatang maging mga 
                     anak ng Diyos.
-                    " - 
+                    "<br>
                     <em>John 1:12</em>
                 </p>
             </li>
@@ -143,7 +153,7 @@
                     malaman ninyo na kayong 
                     sumasampalataya sa Anak ng Diyos ay 
                     may buhay na walang hanggan.” 
-                     - 
+                    <br>
                     <em>1 John 5:12-13</em>
                 </p>
             </li>
@@ -154,7 +164,7 @@
                     ang isang tao, isa na siyang bagong 
                     nilalang. Wala na ang dati niyang 
                     pagkatao, sa halip, ito'y napalitan 
-                    na ng bago.” -                    
+                    na ng bago.”<br>                   
                     <em>2 Corinthians 5:17</em>
                 </p>
             </li>
@@ -166,7 +176,7 @@
                     ng kanyang minamahal na Anak, na sa 
                     kanya ay mayroon tayong katubusan, na 
                     siyang kapatawaran ng mga kasalanan.”                    
-                     - 
+                    <br>
                     <em>Colosas 1:13-14</em>
                 </p>
             </li>
