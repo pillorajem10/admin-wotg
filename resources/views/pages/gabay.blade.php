@@ -3,7 +3,7 @@
 @section('title', 'Gabay para sa Missionaries: ANG DAAN PATUNGONG LANGIT')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/gabay.css?v=2.2') }}">
+    <link rel="stylesheet" href="{{ asset('css/gabay.css?v=2.3') }}">
 @endsection
 
 @section('content')

@@ -133,6 +133,12 @@ body {
     font-weight: bold;
 }
 
+.truth-image {
+    max-width: 100%;
+    object-fit: cover;
+    height: auto;
+}
+
 /* Responsiveness for smaller screens */
 @media (max-width: 768px) {
     .container.daan-cont {
