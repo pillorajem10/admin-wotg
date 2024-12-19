@@ -19,7 +19,7 @@
                         <a href="{{ route('static.daan') }}" class="btn btn-main">Ang Daan Papuntang Langit</a>
                         <a href="{{ route('static.plantDisc') }}" class="btn btn-main">PLANT Discipleship</a>
                         <a href="{{ route('static.tipsForBuildingRelationships') }}" class="btn btn-main">Practical Tips for Building Relationships</a>
-                        <a href="{{ route('static.gabay') }}" class="btn btn-main">Gabay para sa Missionaries: ANG DAAN PATUNGONG LANGIT</a>
+                        {{--<a href="{{ route('static.gabay') }}" class="btn btn-main">Gabay para sa Missionaries: ANG DAAN PATUNGONG LANGIT</a>--}}
                     </div>
                 </div>
             </div>              
