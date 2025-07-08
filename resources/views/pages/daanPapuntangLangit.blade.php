@@ -54,7 +54,7 @@
                         pangalawa ay espiritwal.                                            
                     </h3>
                 </div>
-                <p class="truth-verse">"Subalit para naman sa mga duwag, mga taksil, ... at sa lahat ng mga sinungaling—ang magiging bahagi nila'y sa lawa ng nagliliyab na apoy at asupre. Ito ang pangalawang kamatayan." <br><em>Revelation 21:8</em></p>
+                <p class="truth-verse">"Subalit para naman sa mga duwag, mga taksil, mga gumagawa ng mga kasuklam-suklam na bagay, mga mamamatay-tao, mga nakikiapid, mga mangkukulam, mga sumasamba sa diyus-diyosan, at sa lahat ng mga sinungaling—ang magiging bahagi nila'y sa lawa ng nagliliyab na apoy at asupre. Ito ang pangalawang kamatayan." <br><em>Revelation 21:8</em></p>
                 <img src="{{ asset('images/gospel_tract2.jpg') }}" alt="Image description" class="truth-image">
                 <div class="truth-second-heading">
                     <h3>
